@@ -1,0 +1,22 @@
+
+CREATE TABLESPACE COURSES DATAFILE 
+'C:\morning_topic_a\courses1.dbf' SIZE 50M;
+
+
+CREATE PROFILE administrativo LIMIT
+PASSWORD_LIFE_TIME              40
+SESSIONS_PER_USER               1
+IDLE_TIME                       25
+FAILED_LOGIN_ATTEMPTS           4;
+
+
+CREATE USER DBA_Mandriva7
+IDENTIFIED BY Mandriva7
+DEFAULT TABLESPACE COURSES
+QUOTA 30M on COURSES
+PROFILE administrativo;
+
+GRANT DBA TO DBA_Mandriva7
+GRANT CREATE SESSION TO DBA_Mandriva7
+
+
